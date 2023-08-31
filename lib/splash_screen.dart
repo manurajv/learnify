@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnify/home_screen.dart';
+import 'package:learnify/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // Navigate to the main screen (e.g., HomeScreen) after the splash screen.
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => LoginScreen()),
       );
     });
   }
