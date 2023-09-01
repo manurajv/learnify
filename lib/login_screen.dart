@@ -31,7 +31,14 @@ class LoginScreen extends StatelessWidget {
         } else if (role == "Instructor") {
           print("9999999999999999999999Instructor9999999999999999999999999");
         }
+        else{
+          _showInvalidLoginDialog(context);
+        }
+      }else{
+        _showInvalidLoginDialog(context);
       }
+    }else{
+      _showInvalidLoginDialog(context);
     }
   }
 
@@ -77,5 +84,27 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+
   }
+
+  void _showInvalidLoginDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Invalid Login"),
+          content: Text("Invalid login details. Please try again."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 }
